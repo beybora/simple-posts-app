@@ -9,8 +9,6 @@ export default function Create() {
         post("/posts");
     };
 
-    console.log(errors);
-
     return (
         <>
             <h1 className="title">Create</h1>
