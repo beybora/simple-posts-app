@@ -8,9 +8,11 @@ const Home = ({ posts }) => {
     const { component } = usePage();
 
     const [flasMsg, setFlashMsg] = useState(flash.message);
+    const [successMsg, setSuccessMsg] = useState(flash.message);
 
     setTimeout(() => {
         setFlashMsg(null);
+        setSuccessMsg(null);
     }, 2000);
 
     return (
@@ -20,6 +22,11 @@ const Home = ({ posts }) => {
             {flasMsg && (
                 <div className="absolute top-24 right-6 bg-rose-500 p-2 rounded-md shadow-lg text-sm text-white">
                     {flasMsg}
+                </div>
+            )}
+            {successMsg && (
+                <div className="absolute top-24 right-6 bg-green-500 p-2 rounded-md shadow-lg text-sm text-white">
+                    {successMsg}
                 </div>
             )}
             <div>
