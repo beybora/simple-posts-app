@@ -1,17 +1,18 @@
-import { useForm } from "@inertiajs/react";
+import { Head, useForm, usePage } from "@inertiajs/react";
 import React from "react";
 
 export default function Create() {
     const { data, setData, post, errors, processing } = useForm({ body: "" });
+    const { component } = usePage();
 
     const handleSubmit = (e) => {
         e.preventDefault();
         post("/posts");
     };
-
     return (
         <>
-            <h1 className="title">Create</h1>
+            <Head title={component} />
+            <h1 className="title">{component}</h1>
             <div className="w-1/2 mx-auto">
                 <form onSubmit={handleSubmit}>
                     <textarea
